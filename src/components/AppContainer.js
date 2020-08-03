@@ -9,10 +9,27 @@ export default class AppContainer extends React.Component {
     results: Data,
   };
 
+  handleInputChange = (event) => {
+    const search = event.target.name;
+    const value = event.target.value;
+    this.setState({ [search]: value });
+  }
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    const filteredResults = this.state.results.filter(employee => employee.role === this.state.filter)
+    this.setState({results: filteredResults});
+  }
+
+  handleTableReset = (event) => {
+      event.preventDefault()
+      this.setState({results: Data});
+  }
+
   render() {
     return (
-      <div>
-        <Filter filter={this.state.filter} />
+      <div className='container' >
+        <Filter handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} filter={this.state.filter} />
         <Table data={this.state.results} />
       </div>
     );
