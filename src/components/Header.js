@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function Header() {
-    return <h1>This is the header</h1>
+    return <h1>Employee Directory</h1>
 }

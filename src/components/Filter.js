@@ -8,7 +8,7 @@ export default class Filter extends React.Component {
 
   render() {
     return (
-      <form className="search">
+      <form className="search container">
         <div className="form-group">
           <label htmlFor="filter">Filter by role</label>
           <select className="form-control" id="filter" name="filter">
@@ -22,6 +22,7 @@ export default class Filter extends React.Component {
               {Data[3].role}
             </option>
           </select>
+          <button type="submit" className='btn btn-success'>Filter</button>
         </div>
       </form>
     );
