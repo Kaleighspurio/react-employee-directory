@@ -19,7 +19,7 @@ export default class AppContainer extends React.Component {
 //   TODO: change the alert to something better...
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const filteredResults = this.state.results.filter(employee => employee.role === this.state.filter)
+    const filteredResults = Data.filter(employee => employee.role === this.state.filter)
     console.log(filteredResults.length)
     // if there are results that match the filter, set the state.results to the new results
     // if no results, a message appears
@@ -28,8 +28,11 @@ export default class AppContainer extends React.Component {
     } else {
         alert('Oops, look like there was a typo or there are no roles that match your search.')
     }
+    // clear the input
+    this.setState({filter: ''});
   }
 
+//   this resets the table by setting the state.results back to the original data from the Employee.json
   handleTableReset = (event) => {
       event.preventDefault()
       this.setState({results: Data});
@@ -38,7 +41,12 @@ export default class AppContainer extends React.Component {
   render() {
     return (
       <div className='container' >
-        <Filter handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} filter={this.state.filter} data={this.state.results} handleTableReset={this.handleTableReset} />
+        <Filter 
+        handleFormSubmit={this.handleFormSubmit} 
+        handleInputChange={this.handleInputChange} 
+        filter={this.state.filter} 
+        data={this.state.results} 
+        handleTableReset={this.handleTableReset} />
         <Table data={this.state.results} />
       </div>
     );

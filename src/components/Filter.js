@@ -1,9 +1,11 @@
 import React from 'react';
+import Data from './Employees.json';
 
 export default function Filter(props) {
     // lets give options of possible filters on the input...
     const roleArray = []
-    props.data.forEach(entry => {
+    console.log(Data);
+    Data.forEach(entry => {
         roleArray.push(entry.role)
     })
     // This makes an array of only unique roles
