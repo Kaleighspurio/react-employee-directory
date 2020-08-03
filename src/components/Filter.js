@@ -13,14 +13,23 @@ export default function Filter(props) {
     return (
       <form className="search container mb-4 col-8">
         <div className="form-inline ">
-          <label className='col-4' htmlFor="filter">Filter by role</label>
-          <input name='filter' list='roles' type='text' onChange={props.handleInputChange} value={props.filter} className='form-control col-6' placeholder='Enter a role to filter by' id='filter'/>
+          <label className='mr-2' htmlFor="filter">Filter by role</label>
+          <input 
+          name='filter' 
+          list='roles' 
+          type='text' 
+          onChange={props.handleInputChange} 
+          value={props.filter} 
+          className='form-control col-6' 
+          placeholder='Enter a role to filter by' 
+          id='filter'/>
           <datalist id='roles'>
               {uniqueRoles.map(role => (
                   <option value={role} key={role} />
               ))}
-              </datalist>
+            </datalist>
           <button type="submit" className='btn btn-success m-2' onClick={props.handleFormSubmit} >Filter</button>
+          <button className='btn btn-secondary' onClick={props.handleTableReset} >Reset</button>
         </div>
       </form>
     );

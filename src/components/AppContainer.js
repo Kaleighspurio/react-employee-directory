@@ -16,7 +16,7 @@ export default class AppContainer extends React.Component {
     this.setState({ [search]: value });
   }
 
-//   TODO: change the alert to something with bootstrap- toast?
+//   TODO: change the alert to something better...
   handleFormSubmit = (event) => {
     event.preventDefault();
     const filteredResults = this.state.results.filter(employee => employee.role === this.state.filter)
@@ -28,7 +28,6 @@ export default class AppContainer extends React.Component {
     } else {
         alert('Oops, look like there was a typo or there are no roles that match your search.')
     }
-    
   }
 
   handleTableReset = (event) => {
@@ -39,7 +38,7 @@ export default class AppContainer extends React.Component {
   render() {
     return (
       <div className='container' >
-        <Filter handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} filter={this.state.filter} data={this.state.results} />
+        <Filter handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} filter={this.state.filter} data={this.state.results} handleTableReset={this.handleTableReset} />
         <Table data={this.state.results} />
       </div>
     );
