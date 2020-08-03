@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Joe Shmoe",
+        "role": "Manager",
+        "email": "joe@email.com"
+    },
+    {
+        "id": 2,
+        "name": "Kaleigh Spurio",
+        "role": "Engineer",
+        "email": "kaleighastell@gmail.com"
+    },
+    {
+        "id": 3,
+        "name": "Jane Doe",
+        "role": "Engineer",
+        "email": "janeD@email.com"
+    },
+    {
+        "id": 4,
+        "name": "Brad Murphy",
+        "role": "Analyst",
+        "email": "brad@email.com"
+    },
+    {
+        "id": 5,
+        "name": "Violette Vance",
+        "role": "Engineer",
+        "email": "violette@email.com"
+    },
+    {
+        "id": 6,
+        "name": "Jacqueline Jackson",
+        "role": "Manager",
+        "email": "jacjack@email.com"
+    },
+    {
+        "id": 7,
+        "name": "Larry Lenards",
+        "role": "Engineer",
+        "email": "larry@email.com"
+    },
+    {
+        "id": 8,
+        "name": "Carla Carson",
+        "role": "Analyst",
+        "email": "carla@email.com"
+    }
+]
