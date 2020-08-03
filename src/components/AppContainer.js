@@ -12,8 +12,8 @@ export default class AppContainer extends React.Component {
   render() {
     return (
       <div>
-        <Filter />
-        <Table />
+        <Filter filter={this.state.filter} />
+        <Table data={this.state.results} />
       </div>
     );
   }

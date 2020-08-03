@@ -7,7 +7,7 @@ export default function Table(props) {
       <div className="table-div">
         <table className="table">
           <TableHeaders />
-          <TableData />
+          <TableData data={props.data} />
         </table>
       </div>
     );
