@@ -47,8 +47,8 @@ export default class AppContainer extends React.Component {
 
   handleIdSort = (event) => {
     event.preventDefault();
-    const sortedResults = Data.sort((a, b) => {return a.id - b.id});
-    this.setState({results: sortedResults});
+    const sortedResults = this.state.results.sort((a, b) => {return a.id - b.id});
+    this.setState({results: sortedResults, noResults: false});
   }
 
 //   Conditional rendering if there are no results that match the filtered search
