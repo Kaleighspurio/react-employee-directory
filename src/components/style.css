@@ -1,0 +1,33 @@
+.header {
+    background-color: #3d7092;
+    color: #f6f6f8;
+    border-bottom: 1px #2bc9c0 solid;
+    border-radius: 10px;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+.search {
+   color: #f6f6f8;
+   margin-top: 30px;
+   padding: auto
+}
+
+.filter-btn {
+    border: none;
+    color: #f6f6f8;
+    border-radius: 10px;
+    background-color: #3d7092;
+    margin: 5px;
+    padding: 4px
+}
+
+.filter-btn:hover {
+    border: 1px solid #3d7092;
+    color: #3d7092;
+    background-color: #f6f6f8;
+}
+
+.table-content-message {
+    font-size: 25px;
+    margin-top: 50px;
+}

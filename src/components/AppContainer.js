@@ -2,6 +2,7 @@ import React from 'react';
 import Data from './Employees.json';
 import Filter from './Filter';
 import Table from './Table/Table';
+import './style.css'
 
 export default class AppContainer extends React.Component {
   state = {
@@ -62,9 +63,9 @@ export default class AppContainer extends React.Component {
 
   renderTableContentsMessage = () => {
       if (this.state.madeSearch === true) {
-          return <h3 className="m-3" >All {this.state.results[0].role}s</h3>;
+          return <h3 className="table-content-message" >All {this.state.results[0].role}s</h3>;
       } else {
-          return <h3 className="m-3" >All Employees</h3>;
+          return <h3 className="table-content-message" >All Employees</h3>;
       }
   }
 

@@ -1,5 +1,6 @@
 import React from 'react';
+import './style.css';
 
 export default function Header() {
-    return <h1 className="m-3">Employee Directory</h1>
+    return <h1 className="pt-5 pb-5 header">Employee Directory</h1>
 }

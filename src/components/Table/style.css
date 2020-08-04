@@ -1,0 +1,15 @@
+.table {
+    background-color: #b2c3b8;
+    margin-top: 30px;
+}
+
+.tablehead {
+    background-color: #2BC9C0;
+    color: #251605;
+    
+}
+
+.tabledata {
+    color: #3d7092;
+    background-color: #f6f6f8;
+}

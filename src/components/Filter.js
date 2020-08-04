@@ -1,5 +1,6 @@
 import React from 'react';
 import Data from './Employees.json';
+import './style.css'
 
 export default function Filter(props) {
     // lets give options in a datalist of possible filters on the input...
@@ -30,8 +31,8 @@ export default function Filter(props) {
                   <option value={role} key={role} />
               ))}
             </datalist>
-          <button type="submit" className='btn btn-success m-2' onClick={props.handleFormSubmit} >Filter</button>
-          <button className='btn btn-secondary' onClick={props.handleTableReset} >Reset</button>
+          <button type="submit" className='filter-btn m-2' onClick={props.handleFormSubmit} >Filter</button>
+          <button className='filter-btn' onClick={props.handleTableReset} >Reset</button>
         </div>
       </form>
     );

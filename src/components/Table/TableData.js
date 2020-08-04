@@ -1,9 +1,10 @@
 import React from 'react';
+import './style.css'
 
 export default function TableData(props) {
   return (
     //   map through all results and create a row in the table for each employee in the results
-    <tbody>
+    <tbody className="tabledata">
       {props.data.map((employee) => (
         <tr key={employee.id} >
           <td>{employee.id}</td>
