@@ -32,10 +32,11 @@ export default class AppContainer extends React.Component {
     this.setState({filter: ''});
   }
 
-//   this resets the table by setting the state.results back to the original data from the Employee.json
-  handleTableReset = (event) => {
+//   this resets the table by setting the state.results back to the original data from the Employee.json.  It also resets the order of the data, if the data has been sorted
+  handleTableReset = async (event) => {
       event.preventDefault();
-      this.setState({results: Data, noResults: false, madeSearch: false});
+      await this.setState({results: Data, noResults: false, madeSearch: false});
+      this.handleIdSort();
   }
 
   handleNameSort = (event) => {
@@ -45,8 +46,7 @@ export default class AppContainer extends React.Component {
     this.setState({results: sortedResults, noResults: false });
   }
 
-  handleIdSort = (event) => {
-    event.preventDefault();
+  handleIdSort = () => {
     const sortedResults = this.state.results.sort((a, b) => {return a.id - b.id});
     this.setState({results: sortedResults, noResults: false});
   }
