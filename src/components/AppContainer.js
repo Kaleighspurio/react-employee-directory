@@ -53,7 +53,7 @@ export default class AppContainer extends React.Component {
 
   renderTableContentsMessage = () => {
       if (this.state.madeSearch === true) {
-          return <h3 className="m-3" >All employees with role: {this.state.results[0].role}</h3>;
+          return <h3 className="m-3" >All {this.state.results[0].role}s</h3>;
       } else {
           return <h3 className="m-3" >All Employees</h3>;
       }

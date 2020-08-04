@@ -46,5 +46,11 @@
         "name": "Carla Carson",
         "role": "Analyst",
         "email": "carla@email.com"
+    },
+    {
+        "id": 9,
+        "name": "Laura Lewis",
+        "role": "HR Representative",
+        "email": "laura@email.com"
     }
 ]
