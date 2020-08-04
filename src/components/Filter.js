@@ -2,12 +2,13 @@ import React from 'react';
 import Data from './Employees.json';
 
 export default function Filter(props) {
-    // lets give options of possible filters on the input...
+    // lets give options in a datalist of possible filters on the input...
+    // push all of the roles into an array
     const roleArray = []
     Data.forEach(entry => {
         roleArray.push(entry.role)
     })
-    // This makes an array of only unique roles
+    // This makes an array of only unique roles- no repeats
     // credit for this small code snippet: https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
     const uniqueRoles = Array.from(new Set(roleArray))
 

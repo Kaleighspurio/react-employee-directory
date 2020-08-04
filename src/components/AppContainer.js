@@ -8,6 +8,7 @@ export default class AppContainer extends React.Component {
     filter: '',
     results: Data,
     noResults: false,
+    madeSearch: false,
   };
 
 //   set the filter in the state to what is entered in the input
@@ -17,17 +18,15 @@ export default class AppContainer extends React.Component {
     this.setState({ [search]: value });
   }
 
-//   TODO: change the alert to something better...
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const filteredResults = Data.filter(employee => employee.role === this.state.filter)
+    const filteredResults = Data.filter(employee => employee.role === this.state.filter);
     // if there are results that match the filter, set the state.results to the new results
     // if no results, noResults is set to true, which is used for conditional rendering
     if (filteredResults.length !== 0) {
-        this.setState({results: filteredResults, noResults: false});
+        this.setState({results: filteredResults, noResults: false, madeSearch: true});
     } else {
-        this.setState({noResults: true})
-        // alert('Oops, look like there was a typo or there are no roles that match your search.')
+        this.setState({noResults: true});
     }
     // clear the input
     this.setState({filter: ''});
@@ -35,8 +34,8 @@ export default class AppContainer extends React.Component {
 
 //   this resets the table by setting the state.results back to the original data from the Employee.json
   handleTableReset = (event) => {
-      event.preventDefault()
-      this.setState({results: Data, noResults: false});
+      event.preventDefault();
+      this.setState({results: Data, noResults: false, madeSearch: false});
   }
 
   handleSort = (event) => {
@@ -46,9 +45,17 @@ export default class AppContainer extends React.Component {
 //   Conditional rendering if there are no results that match the filtered search
   renderTable = () => {
       if (this.state.noResults === false) {
-          return <Table handleSort={this.handleSort} data={this.state.results} />
+          return <Table handleSort={this.handleSort} data={this.state.results} />;
       } else if (this.state.noResults === true) {
-          return <p>Oops, looks like there were no results...Try a different search.</p>
+          return <p>Oops, looks like there were no results...Try a different search.</p>;
+      }
+  }
+
+  renderTableContentsMessage = () => {
+      if (this.state.madeSearch === true) {
+          return <h3 className="m-3" >All employees with role: {this.state.results[0].role}</h3>;
+      } else {
+          return <h3 className="m-3" >All Employees</h3>;
       }
   }
 
@@ -61,6 +68,7 @@ export default class AppContainer extends React.Component {
         filter={this.state.filter} 
         data={this.state.results} 
         handleTableReset={this.handleTableReset} />
+        {this.renderTableContentsMessage()}
         {this.renderTable()}
       </div>
     );
