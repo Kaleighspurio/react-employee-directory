@@ -4,7 +4,6 @@ import Data from './Employees.json';
 export default function Filter(props) {
     // lets give options of possible filters on the input...
     const roleArray = []
-    console.log(Data);
     Data.forEach(entry => {
         roleArray.push(entry.role)
     })

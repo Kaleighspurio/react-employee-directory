@@ -7,6 +7,7 @@ export default class AppContainer extends React.Component {
   state = {
     filter: '',
     results: Data,
+    noResults: false,
   };
 
 //   set the filter in the state to what is entered in the input
@@ -20,13 +21,13 @@ export default class AppContainer extends React.Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const filteredResults = Data.filter(employee => employee.role === this.state.filter)
-    console.log(filteredResults.length)
     // if there are results that match the filter, set the state.results to the new results
-    // if no results, a message appears
+    // if no results, noResults is set to true, which is used for conditional rendering
     if (filteredResults.length !== 0) {
-        this.setState({results: filteredResults});
+        this.setState({results: filteredResults, noResults: false});
     } else {
-        alert('Oops, look like there was a typo or there are no roles that match your search.')
+        this.setState({noResults: true})
+        // alert('Oops, look like there was a typo or there are no roles that match your search.')
     }
     // clear the input
     this.setState({filter: ''});
@@ -38,6 +39,19 @@ export default class AppContainer extends React.Component {
       this.setState({results: Data});
   }
 
+  handleSort = (event) => {
+    event.preventDefault();
+  }
+
+//   Conditional rendering if there are no results that match the filtered search
+  renderTable = () => {
+      if (this.state.noResults === false) {
+          return <Table handleSort={this.handleSort} data={this.state.results} />
+      } else if (this.state.noResults === true) {
+          return <p>Oops, looks like there were no results...</p>
+      }
+  }
+
   render() {
     return (
       <div className='container' >
@@ -47,7 +61,8 @@ export default class AppContainer extends React.Component {
         filter={this.state.filter} 
         data={this.state.results} 
         handleTableReset={this.handleTableReset} />
-        <Table data={this.state.results} />
+        {this.renderTable()}
+        {/* <Table handleSort={this.handleSort} data={this.state.results} /> */}
       </div>
     );
   }
