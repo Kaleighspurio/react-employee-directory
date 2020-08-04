@@ -6,7 +6,7 @@ export default function Table(props) {
     return (
       <div className="table-div">
         <table className="table">
-          <TableHeaders handleSort={props.handleSort} />
+          <TableHeaders handleNameSort={props.handleNameSort} />
           <TableData data={props.data} />
         </table>
       </div>

@@ -1,55 +1,64 @@
 [
     {
         "id": 1,
-        "name": "Joe Shmoe",
+        "firstName": "Joe",
+        "lastName": "Shmoe",
         "role": "Manager",
         "email": "joe@email.com"
     },
     {
         "id": 2,
-        "name": "Kaleigh Spurio",
+        "firstName": "Kaleigh",
+        "lastName": "Spurio",
         "role": "Engineer",
         "email": "kaleighastell@gmail.com"
     },
     {
         "id": 3,
-        "name": "Jane Doe",
+        "firstName": "Jane",
+        "lastName": "Doe",
         "role": "Engineer",
         "email": "janeD@email.com"
     },
     {
         "id": 4,
-        "name": "Brad Murphy",
+        "firstName": "Brad",
+        "lastName": "Murphy",
         "role": "Analyst",
         "email": "brad@email.com"
     },
     {
         "id": 5,
-        "name": "Violette Vance",
+        "firstName": "Violette",
+        "lastName": "Vance",
         "role": "Engineer",
         "email": "violette@email.com"
     },
     {
         "id": 6,
-        "name": "Jacqueline Jackson",
+        "firstName": "Jacqueline",
+        "lastName": "Jackson",
         "role": "Manager",
         "email": "jacjack@email.com"
     },
     {
         "id": 7,
-        "name": "Larry Lenards",
+        "firstName": "Larry",
+        "lastName": "Leonards",
         "role": "Engineer",
         "email": "larry@email.com"
     },
     {
         "id": 8,
-        "name": "Carla Carson",
+        "firstName": "Carla",
+        "lastName": "Carson",
         "role": "Analyst",
         "email": "carla@email.com"
     },
     {
         "id": 9,
-        "name": "Laura Lewis",
+        "firstName": "Laura",
+        "lastName": "Lewis",
         "role": "HR Representative",
         "email": "laura@email.com"
     }
