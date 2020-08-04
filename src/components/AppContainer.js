@@ -41,16 +41,20 @@ export default class AppContainer extends React.Component {
   handleNameSort = (event) => {
     event.preventDefault();
     // credit for sorting goes to: https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
-    const sortedResults = this.state.results.sort((a, b) => a.lastName.localeCompare(b.lastName));
-    console.log(sortedResults);
-    console.log(Data)
+    let sortedResults = this.state.results.sort((a, b) => a.lastName.localeCompare(b.lastName));
     this.setState({results: sortedResults, noResults: false });
+  }
+
+  handleIdSort = (event) => {
+    event.preventDefault();
+    const sortedResults = Data.sort((a, b) => {return a.id - b.id});
+    this.setState({results: sortedResults});
   }
 
 //   Conditional rendering if there are no results that match the filtered search
   renderTable = () => {
       if (this.state.noResults === false) {
-          return <Table handleNameSort={this.handleNameSort} data={this.state.results} />;
+          return <Table handleNameSort={this.handleNameSort} handleIdSort={this.handleIdSort} data={this.state.results} />;
       } else if (this.state.noResults === true) {
           return <p>Oops, looks like there were no results...Try a different search.</p>;
       }
