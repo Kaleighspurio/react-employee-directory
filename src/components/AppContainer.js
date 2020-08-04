@@ -36,7 +36,7 @@ export default class AppContainer extends React.Component {
 //   this resets the table by setting the state.results back to the original data from the Employee.json
   handleTableReset = (event) => {
       event.preventDefault()
-      this.setState({results: Data});
+      this.setState({results: Data, noResults: false});
   }
 
   handleSort = (event) => {
@@ -48,7 +48,7 @@ export default class AppContainer extends React.Component {
       if (this.state.noResults === false) {
           return <Table handleSort={this.handleSort} data={this.state.results} />
       } else if (this.state.noResults === true) {
-          return <p>Oops, looks like there were no results...</p>
+          return <p>Oops, looks like there were no results...Try a different search.</p>
       }
   }
 
@@ -62,7 +62,6 @@ export default class AppContainer extends React.Component {
         data={this.state.results} 
         handleTableReset={this.handleTableReset} />
         {this.renderTable()}
-        {/* <Table handleSort={this.handleSort} data={this.state.results} /> */}
       </div>
     );
   }
