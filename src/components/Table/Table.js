@@ -5,7 +5,7 @@ import './style.css';
 
 export default function Table(props) {
     return (
-      <div className="table-div pb-5">
+      <div className="table-div pb-5 table-responsive">
         <table className="table">
           <TableHeaders handleNameSort={props.handleNameSort} handleIdSort={props.handleIdSort} />
           <TableData data={props.data} />
